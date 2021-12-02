@@ -16,13 +16,13 @@ public class Day2Task2 {
 	private static final Logger log = LoggerFactory.getLogger(Day2Task2.class);
 
 	@Value("classpath:day2/task-input.txt")
-	private Resource task1;
+	private Resource input;
 
 	public void solve() {
 		int horPos = 0;
 		int depth = 0;
 		int aim = 0;
-		try (var br = new BufferedReader(new InputStreamReader(task1.getInputStream()))) {
+		try (var br = new BufferedReader(new InputStreamReader(input.getInputStream()))) {
 			String line;
 			while ((line = br.readLine()) != null) {
 				String[] cmd = line.split(" ");
