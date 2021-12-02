@@ -1,28 +1,18 @@
 package com.dataart.fun.aoc2021;
 
-import com.dataart.fun.aoc2021.day1.Day1Task1;
-import com.dataart.fun.aoc2021.day1.Day1Task2;
-import com.dataart.fun.aoc2021.day2.Day2Task1;
-import com.dataart.fun.aoc2021.day2.Day2Task2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.io.IOException;
+import java.util.List;
+
 @SpringBootApplication
 public class Aoc2021Application implements CommandLineRunner {
 
 	@Autowired
-	Day1Task1 day1Task1;
-
-	@Autowired
-	Day1Task2 day1Task2;
-
-	@Autowired
-	Day2Task1 day2Task1;
-
-	@Autowired
-	Day2Task2 day2Task2;
+	List<Solver> solvers;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Aoc2021Application.class, args);
@@ -30,6 +20,16 @@ public class Aoc2021Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		day2Task2.solve();
+		System.out.println(solve(2, 2));
 	}
+
+	private int solve(int day, int taskN) throws IOException {
+		for (Solver solver : solvers) {
+			if (solver.signature().day() == day && solver.signature().taskN() == taskN) {
+				return solver.solve();
+			}
+		}
+		throw new IllegalStateException("No solver for day: " + day + " taskN: " + taskN);
+	}
+
 }

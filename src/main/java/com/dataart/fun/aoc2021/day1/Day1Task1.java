@@ -1,7 +1,7 @@
 package com.dataart.fun.aoc2021.day1;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.dataart.fun.aoc2021.Solver;
+import com.dataart.fun.aoc2021.TaskSignature;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
@@ -11,14 +11,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 @Service
-public class Day1Task1 {
-
-	private static final Logger log = LoggerFactory.getLogger(Day1Task1.class);
+public class Day1Task1 implements Solver {
 
 	@Value("classpath:day1/task-input.txt")
 	private Resource task1;
 
-	public void solve() {
+	public int solve() throws IOException {
 		Integer nprev = null;
 		int answer = 0;
 		try (var br = new BufferedReader(new InputStreamReader(task1.getInputStream()))) {
@@ -30,11 +28,13 @@ public class Day1Task1 {
 				}
 				nprev = n;
 			}
-		} catch (IOException e) {
-			log.error("day1task1", e);
-			return;
 		}
-		log.info("Answer: {}", answer);
+		return answer;
+	}
+
+	@Override
+	public TaskSignature signature() {
+		return new TaskSignature(1, 1);
 	}
 
 }
