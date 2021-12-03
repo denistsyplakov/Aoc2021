@@ -27,19 +27,19 @@ public class Day3Task2 implements Solver, WithLogger {
 	Resource taskInput;
 
 	public int solve() throws IOException {
+		List<char[]> numbers = new ArrayList<>();
 		try (var br = new BufferedReader(new InputStreamReader(taskInput.getInputStream()))) {
 			String line;
-			List<char[]> numbersOx = new ArrayList<>();
 			while ((line = br.readLine()) != null) {
-				numbersOx.add(line.toCharArray());
+				numbers.add(line.toCharArray());
 			}
-			List<char[]> numberCO2 = new ArrayList<>(numbersOx);
-			return findValue(numbersOx, (counts, pos) -> counts.ones()[pos] >= counts.zeros()[pos] ? '1' : '0') *
-					findValue(numberCO2, (counts1, pos1) -> counts1.zeros()[pos1] <= counts1.ones()[pos1] ? '0' : '1');
 		}
+		return findValue(numbers, (counts, pos) -> counts.ones()[pos] >= counts.zeros()[pos] ? '1' : '0') *
+				findValue(numbers, (counts1, pos1) -> counts1.zeros()[pos1] <= counts1.ones()[pos1] ? '0' : '1');
 	}
 
 	private int findValue(List<char[]> numbers, BitPredicate predicate) {
+		numbers = new ArrayList<>(numbers);
 		final var width = numbers.get(0).length;
 		for (int i = 0; i < width; i++) {
 			final var pos = i;
