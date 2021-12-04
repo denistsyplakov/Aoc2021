@@ -20,7 +20,7 @@ public class Aoc2021Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println(solve(3, 2));
+		System.out.println(solve(4, 2));
 	}
 
 	private int solve(int day, int taskN) throws IOException {
