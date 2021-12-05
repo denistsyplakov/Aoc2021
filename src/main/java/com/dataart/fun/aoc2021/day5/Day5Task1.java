@@ -22,7 +22,7 @@ public class Day5Task1 implements Solver, WithLogger {
 	@Value("classpath:day5/task-input.txt")
 	Resource taskInput;
 
-	boolean count45DegreeLines = false;
+	protected boolean count45DegreeLines = false;
 
 	public int solve() throws IOException {
 
