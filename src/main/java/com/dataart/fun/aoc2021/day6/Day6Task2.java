@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class Day6Task2 extends Day6Task1 {
+
 	public Day6Task2() {
 		daysToSimulate = 256;
 	}
