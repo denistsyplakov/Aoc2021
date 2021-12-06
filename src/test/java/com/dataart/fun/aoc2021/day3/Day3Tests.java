@@ -18,18 +18,13 @@ class Day3Tests {
 	@Autowired
 	Day3Task2 day3Task2;
 
-	@Value("classpath:day3/task-input-test.txt")
-	Resource testInput;
-
 	@Test
 	void testDay3Task1() throws IOException {
-		day3Task1.taskInput = testInput;
 		Assertions.assertEquals(day3Task1.solve(), "198");
 	}
 
 	@Test
 	void testDay3Task2() throws IOException {
-		day3Task2.taskInput = testInput;
 		Assertions.assertEquals(day3Task2.solve(), "230");
 	}
 
