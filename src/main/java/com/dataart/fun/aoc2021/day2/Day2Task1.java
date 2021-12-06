@@ -33,7 +33,7 @@ public class Day2Task1 implements Solver, WithLogger {
 			}
 		}
 		log().info("Answer horPos: {} depth:{} answer: {}", horPos, depth, horPos * depth);
-		return (horPos * depth)+"";
+		return (horPos * depth) + "";
 	}
 
 	@Override

@@ -32,7 +32,7 @@ public class Day4Task2 implements Solver, WithLogger {
 		}
 
 		public boolean bingoQuestionMark(int number) {
-			if (boardWon.get()){
+			if (boardWon.get()) {
 				//no bingo for already won boards.
 				return false;
 			}
@@ -97,7 +97,7 @@ public class Day4Task2 implements Solver, WithLogger {
 				if (board.bingoQuestionMark(number)) {
 					wonBoardCount++;
 					if (wonBoardCount == boards.size()) {
-						return (board.sumAllUnmarked() * number)+"";
+						return (board.sumAllUnmarked() * number) + "";
 					}
 				}
 			}
@@ -106,7 +106,7 @@ public class Day4Task2 implements Solver, WithLogger {
 	}
 
 	private Board readBoard(BufferedReader br) throws IOException {
-		var board = new Board(new int[5][5],new AtomicBoolean(false));
+		var board = new Board(new int[5][5], new AtomicBoolean(false));
 		for (int i = 0; i < 5; i++) {
 			String[] boardLine = br.readLine().trim().replaceAll("  *", " ").split(" ");
 			Assert.isTrue(boardLine.length == 5, "boardLine.length == 5");

@@ -55,7 +55,7 @@ public class Day5Task1 implements Solver, WithLogger {
 				}
 			}
 		}
-		return answer+"";
+		return answer + "";
 	}
 
 	private int checkWidthY(int widthY, Vector v) {

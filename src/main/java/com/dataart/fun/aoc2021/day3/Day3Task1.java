@@ -50,7 +50,7 @@ public class Day3Task1 implements Solver, WithLogger {
 				}
 			}
 			log().info("{}*{}", gammaStr, epsilonStr);
-			return (Integer.parseInt(new String(gammaStr), 2) * Integer.parseInt(new String(epsilonStr), 2))+"";
+			return (Integer.parseInt(new String(gammaStr), 2) * Integer.parseInt(new String(epsilonStr), 2)) + "";
 		}
 	}
 

@@ -3,9 +3,7 @@ package com.dataart.fun.aoc2021.day4;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.core.io.Resource;
 
 import java.io.IOException;
 
@@ -25,7 +23,7 @@ class Day4Tests {
 
 	@Test
 	void testDay4Task2() throws IOException {
-		Assertions.assertEquals(day4Task2.solve() , "1924");
+		Assertions.assertEquals(day4Task2.solve(), "1924");
 	}
 
 }

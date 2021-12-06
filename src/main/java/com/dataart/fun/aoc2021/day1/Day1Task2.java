@@ -35,7 +35,7 @@ public class Day1Task2 implements Solver {
 				}
 			}
 		}
-		return answer+"";
+		return answer + "";
 	}
 
 	@Override

@@ -84,7 +84,7 @@ public class Day4Task1 implements Solver, WithLogger {
 		for (Integer number : numbers) {
 			for (Board board : boards) {
 				if (board.bingoQuestionMark(number)) {
-					return (board.sumAllUnmarked() * number)+"";
+					return (board.sumAllUnmarked() * number) + "";
 				}
 			}
 		}

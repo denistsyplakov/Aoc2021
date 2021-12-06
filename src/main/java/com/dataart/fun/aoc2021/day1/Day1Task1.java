@@ -29,7 +29,7 @@ public class Day1Task1 implements Solver {
 				nprev = n;
 			}
 		}
-		return answer+"";
+		return answer + "";
 	}
 
 	@Override
