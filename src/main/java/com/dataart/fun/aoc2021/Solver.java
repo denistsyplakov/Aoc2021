@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public interface Solver {
 
-	int solve() throws IOException;
+	String solve() throws IOException;
 
 	TaskSignature signature();
 

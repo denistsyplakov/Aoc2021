@@ -17,7 +17,7 @@ public class Day2Task1 implements Solver, WithLogger {
 	@Value("classpath:day2/task-input.txt")
 	private Resource task1;
 
-	public int solve() throws IOException {
+	public String solve() throws IOException {
 		int horPos = 0;
 		int depth = 0;
 		try (var br = new BufferedReader(new InputStreamReader(task1.getInputStream()))) {
@@ -33,7 +33,7 @@ public class Day2Task1 implements Solver, WithLogger {
 			}
 		}
 		log().info("Answer horPos: {} depth:{} answer: {}", horPos, depth, horPos * depth);
-		return horPos * depth;
+		return (horPos * depth)+"";
 	}
 
 	@Override

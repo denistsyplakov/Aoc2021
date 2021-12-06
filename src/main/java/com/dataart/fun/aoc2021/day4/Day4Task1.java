@@ -70,7 +70,7 @@ public class Day4Task1 implements Solver, WithLogger {
 	}
 
 	@Override
-	public int solve() throws IOException {
+	public String solve() throws IOException {
 		List<Integer> numbers;
 		Set<Board> boards = new HashSet<>();
 		try (var br = new BufferedReader(new InputStreamReader(taskInput.getInputStream()))) {
@@ -84,7 +84,7 @@ public class Day4Task1 implements Solver, WithLogger {
 		for (Integer number : numbers) {
 			for (Board board : boards) {
 				if (board.bingoQuestionMark(number)) {
-					return board.sumAllUnmarked() * number;
+					return (board.sumAllUnmarked() * number)+"";
 				}
 			}
 		}

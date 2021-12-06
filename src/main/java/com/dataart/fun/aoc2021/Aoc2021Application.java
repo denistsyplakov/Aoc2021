@@ -20,10 +20,11 @@ public class Aoc2021Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println(solve(5, 2));
+		System.out.println(solve(6, 1));
+		System.out.println(solve(6, 2));
 	}
 
-	private int solve(int day, int taskN) throws IOException {
+	private String solve(int day, int taskN) throws IOException {
 		for (Solver solver : solvers) {
 			if (solver.signature().day() == day && solver.signature().taskN() == taskN) {
 				return solver.solve();

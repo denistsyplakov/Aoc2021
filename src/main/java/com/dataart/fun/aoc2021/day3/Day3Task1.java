@@ -17,7 +17,7 @@ public class Day3Task1 implements Solver, WithLogger {
 	@Value("classpath:day3/task-input.txt")
 	Resource taskInput;
 
-	public int solve() throws IOException {
+	public String solve() throws IOException {
 
 		try (var br = new BufferedReader(new InputStreamReader(taskInput.getInputStream()))) {
 			String line;
@@ -50,7 +50,7 @@ public class Day3Task1 implements Solver, WithLogger {
 				}
 			}
 			log().info("{}*{}", gammaStr, epsilonStr);
-			return Integer.parseInt(new String(gammaStr), 2) * Integer.parseInt(new String(epsilonStr), 2);
+			return (Integer.parseInt(new String(gammaStr), 2) * Integer.parseInt(new String(epsilonStr), 2))+"";
 		}
 	}
 

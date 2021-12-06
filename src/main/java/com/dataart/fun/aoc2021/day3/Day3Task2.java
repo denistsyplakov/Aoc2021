@@ -26,7 +26,7 @@ public class Day3Task2 implements Solver, WithLogger {
 	@Value("classpath:day3/task-input.txt")
 	Resource taskInput;
 
-	public int solve() throws IOException {
+	public String solve() throws IOException {
 		List<char[]> numbers = new ArrayList<>();
 		try (var br = new BufferedReader(new InputStreamReader(taskInput.getInputStream()))) {
 			String line;
@@ -34,8 +34,8 @@ public class Day3Task2 implements Solver, WithLogger {
 				numbers.add(line.toCharArray());
 			}
 		}
-		return findValue(numbers, (counts, pos) -> counts.ones()[pos] >= counts.zeros()[pos] ? '1' : '0') *
-				findValue(numbers, (counts1, pos1) -> counts1.zeros()[pos1] <= counts1.ones()[pos1] ? '0' : '1');
+		return (findValue(numbers, (counts, pos) -> counts.ones()[pos] >= counts.zeros()[pos] ? '1' : '0') *
+				findValue(numbers, (counts1, pos1) -> counts1.zeros()[pos1] <= counts1.ones()[pos1] ? '0' : '1'))+"";
 	}
 
 	private int findValue(List<char[]> numbers, BitPredicate predicate) {

@@ -24,7 +24,7 @@ public class Day5Task1 implements Solver, WithLogger {
 
 	protected boolean count45DegreeLines = false;
 
-	public int solve() throws IOException {
+	public String solve() throws IOException {
 
 		int answer;
 		try (var br = new BufferedReader(new InputStreamReader(taskInput.getInputStream()))) {
@@ -55,7 +55,7 @@ public class Day5Task1 implements Solver, WithLogger {
 				}
 			}
 		}
-		return answer;
+		return answer+"";
 	}
 
 	private int checkWidthY(int widthY, Vector v) {

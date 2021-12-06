@@ -18,7 +18,7 @@ public class Day1Task2 implements Solver {
 	@Value("classpath:day1/task-input.txt")
 	private Resource task1;
 
-	public int solve() throws IOException {
+	public String solve() throws IOException {
 		int answer = 0;
 		List<Integer> nums = new ArrayList<>();
 		try (var br = new BufferedReader(new InputStreamReader(task1.getInputStream()))) {
@@ -35,7 +35,7 @@ public class Day1Task2 implements Solver {
 				}
 			}
 		}
-		return answer;
+		return answer+"";
 	}
 
 	@Override

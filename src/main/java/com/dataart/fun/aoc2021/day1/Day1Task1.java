@@ -16,7 +16,7 @@ public class Day1Task1 implements Solver {
 	@Value("classpath:day1/task-input.txt")
 	private Resource task1;
 
-	public int solve() throws IOException {
+	public String solve() throws IOException {
 		Integer nprev = null;
 		int answer = 0;
 		try (var br = new BufferedReader(new InputStreamReader(task1.getInputStream()))) {
@@ -29,7 +29,7 @@ public class Day1Task1 implements Solver {
 				nprev = n;
 			}
 		}
-		return answer;
+		return answer+"";
 	}
 
 	@Override
