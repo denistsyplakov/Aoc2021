@@ -20,8 +20,8 @@ public class Aoc2021Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println(solve(6, 1));
-		System.out.println(solve(6, 2));
+		System.out.println(solve(7, 1));
+		System.out.println(solve(7, 2));
 	}
 
 	private String solve(int day, int taskN) throws IOException {
