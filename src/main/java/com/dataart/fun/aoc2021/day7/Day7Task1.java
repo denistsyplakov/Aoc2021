@@ -35,7 +35,6 @@ public class Day7Task1 implements Solver, WithLogger {
 		for (int i = from; i <= to; i++) {
 			int fuel = checkFuel(i, numbers);
 			if (minFuel > fuel) {
-				log().info("{}:{}->{}", i, minFuel, fuel);
 				minFuel = fuel;
 			}
 		}
@@ -43,11 +42,10 @@ public class Day7Task1 implements Solver, WithLogger {
 	}
 
 	protected int checkFuel(Integer mark, List<Integer> numbers) {
-		int sum = 0;
-		for (int i = 0; i < numbers.size(); i++) {
-			sum += Math.abs(numbers.get(i) - mark);
-		}
-		return sum;
+		return numbers
+				.stream()
+				.map(num -> Math.abs(num - mark))
+				.mapToInt(Integer::intValue).sum();
 	}
 
 	@Override

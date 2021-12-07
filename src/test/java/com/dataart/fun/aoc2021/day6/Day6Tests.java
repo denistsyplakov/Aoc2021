@@ -17,12 +17,12 @@ class Day6Tests {
 	Day6Task2 day6Task2;
 
 	@Test
-	void testDay5Task1() throws IOException {
+	void testDay6Task1() throws IOException {
 		Assertions.assertEquals(day6Task1.solve(), "5934");
 	}
 
 	@Test
-	void testDay5Task2() throws IOException {
+	void testDay6Task2() throws IOException {
 		Assertions.assertEquals(day6Task2.solve(), "26984457539");
 	}
 
