@@ -14,6 +14,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Service
 public class Day7Task1 implements Solver, WithLogger {
@@ -29,16 +30,10 @@ public class Day7Task1 implements Solver, WithLogger {
 					.map(Integer::parseInt)
 					.collect(Collectors.toList());
 		}
-		int from = Collections.min(numbers);
-		int to = Collections.max(numbers);
-		int minFuel = Integer.MAX_VALUE;
-		for (int i = from; i <= to; i++) {
-			int fuel = checkFuel(i, numbers);
-			if (minFuel > fuel) {
-				minFuel = fuel;
-			}
-		}
-		return minFuel + "";
+		return IntStream.range(Collections.min(numbers),Collections.max(numbers))
+				.map(mark -> checkFuel(mark,numbers))
+				.min().getAsInt()+"";
+
 	}
 
 	protected int checkFuel(Integer mark, List<Integer> numbers) {

@@ -17,7 +17,7 @@ public class Day7Task2 extends Day7Task1 {
 		return numbers
 				.stream()
 				.map(num -> {
-					int n = Math.abs(num - mark);
+					final int n = Math.abs(num - mark);
 					return n * (n + 1) / 2;
 				})
 				.mapToInt(Integer::intValue).sum();
