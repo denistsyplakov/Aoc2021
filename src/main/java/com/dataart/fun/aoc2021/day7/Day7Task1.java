@@ -30,15 +30,14 @@ public class Day7Task1 implements Solver, WithLogger {
 					.map(Integer::parseInt)
 					.collect(Collectors.toList());
 		}
-		return IntStream.range(Collections.min(numbers),Collections.max(numbers))
-				.map(mark -> checkFuel(mark,numbers))
-				.min().getAsInt()+"";
+		return IntStream.range(Collections.min(numbers), Collections.max(numbers))
+				.map(mark -> checkFuel(mark, numbers))
+				.min().getAsInt() + "";
 
 	}
 
 	protected int checkFuel(Integer mark, List<Integer> numbers) {
-		return numbers
-				.stream()
+		return numbers.stream()
 				.map(num -> Math.abs(num - mark))
 				.mapToInt(Integer::intValue).sum();
 	}
